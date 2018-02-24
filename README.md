@@ -6,4 +6,8 @@ Part 1 of the tutorial can be accessed by checking out the `part1` tag -
 
 Part 2 of the tutorial can be accessed by checking out the `part2` tag -
 
-`git checkoout part2`
+`git checkout part2`
+
+Part 2 with scss support -
+
+`git checkout part2-scss`
