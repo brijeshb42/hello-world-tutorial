@@ -6,7 +6,7 @@ const env = process.env.NODE_ENV || 'development';
 const isDev = env === 'development';
 const isProd = env === 'production';
 
-const extractCss = new ExtractTextPlugin({
+const extractScss = new ExtractTextPlugin({
   filename: 'index.css',
   disable: isDev
 });
@@ -21,7 +21,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin(),
-    extractCss
+    extractScss
   ],
   module: {
     rules: [{
@@ -29,11 +29,12 @@ module.exports = {
       exclude: /node_modules/,
       use: 'babel-loader'
     }, {
-      test: /\.css$/,
+      test: /(\.css|\.scss)$/,
       exclude: /node_modules/,
-      use: extractCss.extract({
+      use: extractScss.extract({
         use:[
-          {loader: 'css-loader'}
+          {loader: 'css-loader'},
+          {loader: 'sass-loader'}
         ],
         fallback: 'style-loader'
       })
