@@ -11,3 +11,7 @@ Part 2 of the tutorial can be accessed by checking out the `part2` tag -
 Part 2 with scss support -
 
 `git checkout part2-scss`
+
+Part 3 with linting -
+
+`git checkout part3`
